@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import by.htp.ahremenko.webex.command.Command;
 import by.htp.ahremenko.webex.command.impl.AddCalculatorImpl;
+import by.htp.ahremenko.webex.command.impl.MinusCalculatorImpl;
 
 public class CommandProvider {
 	private static CommandProvider provider = null; 
@@ -11,6 +12,7 @@ public class CommandProvider {
 	
 	public CommandProvider() {
 		commands.put("ADD", new AddCalculatorImpl());
+		commands.put("MINUS", new MinusCalculatorImpl());		
 	}
 	
 	public Command getCommand(String cmd) {
