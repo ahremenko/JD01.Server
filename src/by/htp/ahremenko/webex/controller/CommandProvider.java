@@ -13,6 +13,7 @@ public class CommandProvider {
 	public CommandProvider() {
 		commands.put("ADD", new AddCalculatorImpl());
 		commands.put("MINUS", new MinusCalculatorImpl());		
+		commands.put("REG", new RegisterPlayerImpl());		
 	}
 	
 	public Command getCommand(String cmd) {
@@ -22,7 +23,7 @@ public class CommandProvider {
 	public static CommandProvider getInstance() {
 		if (provider == null) {
 			provider = new CommandProvider();
-			System.out.println("Creating CommandProvider..");
+			//System.out.println("Creating CommandProvider..");
 		}
 		return provider;
 	}

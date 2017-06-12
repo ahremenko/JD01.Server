@@ -2,7 +2,7 @@ package by.htp.ahremenko.webex.start;
 
 import java.io.IOException;
 
-import by.htp.ahremenko.webex.controller.ServerController2;
+import by.htp.ahremenko.webex.controller.ServerController3;
 
 public class FireServer {
 
@@ -15,14 +15,20 @@ public class FireServer {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}*/
-		ServerController2 server;
+		/*ServerController2 server;
 		try {
 			server = new ServerController2 (1235);
 			server.start();			
 		} catch (IOException e) {
 			e.printStackTrace();
+		}*/
+		ServerController3 server;
+		try {
+			server = new ServerController3 (1235);
+			server.start();			
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-
 	}
 
 }

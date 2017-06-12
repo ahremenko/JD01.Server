@@ -3,6 +3,7 @@ package by.htp.ahremenko.webex.command.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import by.htp.ahremenko.domain.GameCrossesZeros;
 import by.htp.ahremenko.webex.command.Command;
 
 public class MinusCalculatorImpl implements Command {
@@ -10,7 +11,7 @@ public class MinusCalculatorImpl implements Command {
 	private static final String executeClassName = "by.htp.ahremenko.logic.Calculator";
 
 	@Override
-	public String execute(String request) {
+	public String execute(String request, GameCrossesZeros theGame) {
 		String[] params;
 		params = request.split("\\s+");
 		try {
