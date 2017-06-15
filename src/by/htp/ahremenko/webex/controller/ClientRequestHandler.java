@@ -24,7 +24,7 @@ public class ClientRequestHandler implements Runnable{
 		this.clientNumber = cn;
 		this.myServer = srv;
 		this.provider = prvdr;
-		
+		//System.out.println("cn:" + cn);
 		if (cn%2!=0) {
 			this.theGame = gc.createGame(cn);
 		} else {

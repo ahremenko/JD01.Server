@@ -5,6 +5,7 @@ import java.util.Map;
 import by.htp.ahremenko.webex.command.Command;
 import by.htp.ahremenko.webex.command.impl.AddCalculatorImpl;
 import by.htp.ahremenko.webex.command.impl.MinusCalculatorImpl;
+import by.htp.ahremenko.webex.command.impl.RegisterPlayerImpl;
 
 public class CommandProvider {
 	private static CommandProvider provider = null; 

@@ -3,6 +3,7 @@ package by.htp.ahremenko.webex.controller;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -44,7 +45,8 @@ public class ServerController3 {
 	}
 	
 	private void createHandler( Socket socket, GameController gameController) {
-		ClientRequestHandler clientHandler = new ClientRequestHandler (socket, clientCounter++, this, provider, gameController );
+		clientCounter++;
+		ClientRequestHandler clientHandler = new ClientRequestHandler (socket, clientCounter, this, provider, gameController );
 		new Thread (clientHandler).start();
 		clients.put(clientCounter, clientHandler);
 	}

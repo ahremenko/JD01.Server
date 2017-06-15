@@ -7,13 +7,13 @@ public class GameCrossesZeros {
 	private Long idPlayer2;
 	private int whatPlayerMovement; // 1 - player1 (set Crosses), 2 - player2 (set Zeros)
 	
-	private int resultGame;  // 1 - player1 won, 2 - player2 won, 0 - no winner, -1 - game in process, -2 - wait for player2, -3 - wait for player1
+	private int resultGame;  // 1 - player1 won, 2 - player2 won, 0 - no winner, -1 - game in process, -2 - wait for players registration
 	
 	private int[] gameField = {0,0,0,0,0,0,0,0,0};
 	
 	public GameCrossesZeros( Long idP1 ) {
 		this.idPlayer1 = idP1;
-		this.resultGame = -3;
+		this.resultGame = -2;
 		this.whatPlayerMovement = 1;
 	}
 	
@@ -31,6 +31,8 @@ public class GameCrossesZeros {
 
 	public void setPlayer1Name(String player1Name) {
 		this.player1Name = player1Name;
+		if (this.player2Name != null)
+			this.resultGame = -1;
 	}
 
 	public String getPlayer2Name() {
@@ -39,6 +41,8 @@ public class GameCrossesZeros {
 
 	public void setPlayer2Name(String player2Name) {
 		this.player2Name = player2Name;
+		if (this.player1Name != null)
+			this.resultGame = -1;		
 	}
 
 	public void playerMovement( int whatField ) {

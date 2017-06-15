@@ -1,16 +1,17 @@
 package by.htp.ahremenko.domain;
 
 import java.net.Socket;
+import java.util.HashMap;
 import java.util.Map;
 
 import by.htp.ahremenko.webex.controller.ClientRequestHandler;
 
 public class GameController {
-	private Map<Long, GameCrossesZeros> gamepool;
+	private Map<Long, GameCrossesZeros> gamepool = new HashMap();
 	
 	public GameCrossesZeros createGame( Long id1 ) {
 		GameCrossesZeros gameHandler = new GameCrossesZeros ( id1 );
-		gamepool.put(id1, gameHandler);
+		this.gamepool.put(id1, gameHandler); 
 		return gameHandler;
 	}
 	
@@ -24,6 +25,7 @@ public class GameController {
 			return null;
 		}
 	}
+	
 	
 	public void deleteGame (long idPlayer1 ) {
 		gamepool.remove(idPlayer1);
